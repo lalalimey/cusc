@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('facebook');
             $table->string('lineid');
             $table->string('telephone');
+            $table->integer('approve')->default(null);
         });
     }
 

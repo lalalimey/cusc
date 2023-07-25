@@ -10,6 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Database\Eloquent\Model;
 
 
 class User extends Authenticatable
@@ -42,6 +43,7 @@ class User extends Authenticatable
         'register',
         'slip',
         'roles',
+        'approve',
     ];
 
     /**

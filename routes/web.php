@@ -26,10 +26,22 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        $serviceStatus = App\Models\service_status::find(1);
+        //dd($serviceStatus);
+        return view('dashboard')->with('serviceStatus', $serviceStatus);
     })->name('dashboard');
     Route::get('/apply', function () {
         return view('apply');
     })->name('apply');
     Route::post('/apply/form', [RegisterController::class, 'store'])->name('form.submit');
+});
+
+Route::middleware('role:staff')->group(function () {
+    // Routes accessible only to users with the 'staff' role
+    Route::get('/admin', function () {
+        return view('staff/admin');
+    })->name('admin');
+    Route::get('/check',[RegisterController::class, 'retrieve']);
+    Route::post('/apply/detail', [RegisterController::class, 'detail'])->name('form.detail');
+    Route::post('/apply/confirm', [RegisterController::class, 'approve']);
 });

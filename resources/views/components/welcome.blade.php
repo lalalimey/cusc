@@ -8,9 +8,15 @@
         If you don't register to this contest yet, please register using button below. There are 500 baht registration fee.
         The register form will be open from 15 july to 30 august
     </p>
-    <a href="/apply">
-        <x-button>register</x-button>
-    </a>
+{{--    @if($serviceStatus->status == 'on')--}}
+{{--        <a href="/apply">--}}
+{{--            <x-button>register</x-button>--}}
+{{--        </a>--}}
+{{--    @elseif($serviceStatus->status == 'off')--}}
+{{--        <a href="/apply">--}}
+{{--            <x-button class="disabled:opacity-25">register close</x-button>--}}
+{{--        </a>--}}
+{{--    @endif--}}
 </div>
 
 <div class="bg-gray-200 dark:bg-gray-800 bg-opacity-25 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8">

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use App\Models\User;
 
 class RegisterController extends Controller
 {
@@ -24,8 +26,7 @@ class RegisterController extends Controller
         ]);
         if ($request->hasFile('slip')) {
             $image = $request->file('slip');
-            $path = $image->store('images');
-//            <img src="{{ Storage::url($path) }}" alt="Image">
+            $path = $image->store('public/images');
         }
 
         $user->firstname = $request->firstname;
@@ -41,5 +42,34 @@ class RegisterController extends Controller
         $user->save();
         return redirect('/dashboard')->withErrors(['error' => 'Failed to save data.']);
         // Redirect or return a response as desired
+    }
+    public function retrieve(){
+        $query = User::query();
+        $query->where('register', 1); // Add filter for the 'register' column
+        $users = $query->paginate(20);
+        return view('staff/registration-check', compact('users'));
+    }
+    public function detail(Request $request)
+    {
+        $id = $request->input('id');
+        $user = User::find($id);
+
+        if (!$user) {
+            abort(404); // Display a 404 error page or perform a different action
+        }
+
+        // If the 'slip' attribute is the filename and not the full path,
+        // construct the path accordingly (assuming it's in the 'images' folder).
+        $path =$user->slip;
+        //dd($path,Storage::exists($path));
+        return view('staff/registration-detail', compact('user', 'path'));
+    }
+    public function approve(Request $request){
+        $approver = Auth::user();
+        $id = $request->input('id');
+        $user = User::find($id);
+        $user->approve = $approver->id;
+        $user->save();
+        return redirect('/check');
     }
 }
