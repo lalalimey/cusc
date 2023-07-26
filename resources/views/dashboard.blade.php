@@ -31,27 +31,47 @@
                 <div class="bg-gray-200 dark:bg-gray-800 bg-opacity-25 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8">
                     <div>
                         <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-6 h-6 stroke-gray-400">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -1 20 20" class="ml-1 w-6 h-6 fill-indigo-500 dark:fill-indigo-200">
+                                <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383h1.312Z"/>
                             </svg>
                             <h2 class="ml-3 text-xl font-semibold text-gray-900 dark:text-white">
-                                <a href="https://laravel.com/docs">Documentation</a>
+                                <p>first round contest</p>
                             </h2>
                         </div>
-
+                        <div class="mt-3 ml-10 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -1 20 20" class="ml-1 w-6 h-6 fill-indigo-500 dark:fill-indigo-200">
+                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                            </svg>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed ml-2">
+                                13 dec 2023,15 dec 2023,17 dec 2003
+                            </p>
+                        </div>
+                        <div class="mt-3 ml-10 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -1 20 20" class="ml-1 w-6 h-6 fill-indigo-500 dark:fill-indigo-200">
+                                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                            </svg>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed ml-2">
+                                17:00 - 20:00
+                            </p>
+                        </div>
+                        <div class="mt-3 ml-10 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -1 20 20" class="ml-1 w-6 h-6 fill-indigo-500 dark:fill-indigo-200">
+                                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                            </svg>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed ml-2">
+                                Chalerm Prommas
+                            </p>
+                        </div>
                         <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                            Laravel has wonderful documentation covering every aspect of the framework. Whether you're new to the framework or have previous experience, we recommend reading all of the documentation from beginning to end.
+                            please fill out the form to inform music name and soundtrack using button below after registered and approved by staff. <span class="font-bold text-white">this form will be open until 31 december 2023.</span> Do not inform this form on time mean you waiver.
                         </p>
-
-                        <p class="mt-4 text-sm">
-                            <a href="https://laravel.com/docs" class="inline-flex items-center font-semibold text-indigo-700 dark:text-indigo-300">
-                                Explore the documentation
-
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="ml-1 w-5 h-5 fill-indigo-500 dark:fill-indigo-200">
-                                    <path fill-rule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z" clip-rule="evenodd" />
-                                </svg>
+                        <div class="flex justify-end mt-2">
+                            <a href="">
+                                <x-button>detail</x-button>
                             </a>
-                        </p>
+                        </div>
                     </div>
 
                     <div>
