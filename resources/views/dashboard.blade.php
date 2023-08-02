@@ -68,7 +68,7 @@
                             please fill out the form to inform music name and soundtrack using button below after registered and approved by staff. <span class="font-bold text-white">this form will be open until 31 december 2023.</span> Do not inform this form on time mean you waiver.
                         </p>
                         <div class="flex justify-end mt-2">
-                            <a href="">
+                            <a href="/1/detail">
                                 <x-button>detail</x-button>
                             </a>
                         </div>

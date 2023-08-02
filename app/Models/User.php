@@ -44,6 +44,9 @@ class User extends Authenticatable
         'slip',
         'roles',
         'approve',
+        '1_day',
+        '1_song',
+        '1_link',
     ];
 
     /**

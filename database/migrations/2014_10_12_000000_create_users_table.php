@@ -30,6 +30,9 @@ return new class extends Migration
             $table->string('lineid');
             $table->string('telephone');
             $table->integer('approve')->default(null);
+            $table->enum('1_day', ['30 oct', '1 nov', '3 nov']);
+            $table->string('1_song');
+            $table->string('1_link');
         });
     }
 
