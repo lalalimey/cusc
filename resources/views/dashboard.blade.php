@@ -17,14 +17,16 @@
                         If you don't register to this contest yet, please register using button below. There are 500 baht registration fee.
                         The register form will be open from 15 july to 30 august
                     </p>
-                    @if($serviceStatus->status == 'on')
+                    @if(auth()->user()->register >= 1)
+                        <x-button class="disabled:opacity-25 " disabled>registered</x-button>
+                    @elseif($serviceStatus->status == 'off')
+                        <x-button class="disabled:opacity-25 " disabled>registration closed</x-button>
+                    @elseif($serviceStatus->status == 'on')
                         <a href="/apply">
                             <x-button>register</x-button>
                         </a>
-                    @elseif($serviceStatus->status == 'off')
-                        <a href="/apply">
-                            <x-button class="disabled:opacity-25 " disabled>registration closed</x-button>
-                        </a>
+                    @else
+                        <x-button class="disabled:opacity-25 " disabled>registration closed</x-button>
                     @endif
                 </div>
 
@@ -68,9 +70,13 @@
                             please fill out the form to inform music name and soundtrack using button below after registered and approved by staff. <span class="font-bold text-white">this form will be open until 31 december 2023.</span> Do not inform this form on time mean you waiver.
                         </p>
                         <div class="flex justify-end mt-2">
-                            <a href="/1/detail">
-                                <x-button>detail</x-button>
-                            </a>
+                            @if(auth()->user()->approve != null)
+                                <a href="/1/detail">
+                                    <x-button>detail</x-button>
+                                </a>
+                            @else
+                                <x-button class="disabled:opacity-25 " disabled>detail</x-button>
+                            @endif
                         </div>
                     </div>
                     <div>
@@ -112,9 +118,14 @@
                             please fill out the form to inform music name and soundtrack using button below after registered and approved by staff. <span class="font-bold text-white">this form will be open until 31 december 2023.</span> Do not inform this form on time mean you waiver.
                         </p>
                         <div class="flex justify-end mt-2">
-                            <a href="">
-                                <x-button>detail</x-button>
-                            </a>
+                            @php($serviceStatus1 = App\Models\service_status::find(2))
+                            @if(auth()->user()->register >= 2 && $serviceStatus1->status == 'on')
+                                <a href="/2/detail">
+                                    <x-button>detail</x-button>
+                                </a>
+                            @else
+                                <x-button class="disabled:opacity-25 " disabled>detail</x-button>
+                            @endif
                         </div>
                     </div>
                     <div>
@@ -156,9 +167,14 @@
                             please fill out the form to inform music name and soundtrack using button below after registered and approved by staff. <span class="font-bold text-white">this form will be open until 31 december 2023.</span> Do not inform this form on time mean you waiver.
                         </p>
                         <div class="flex justify-end mt-2">
-                            <a href="">
-                                <x-button>detail</x-button>
-                            </a>
+                            @php($serviceStatus2 = App\Models\service_status::find(3))
+                            @if(auth()->user()->register >= 3 && $serviceStatus2->status == 'on')
+                                <a href="/3/detail">
+                                    <x-button>detail</x-button>
+                                </a>
+                            @else
+                                <x-button class="disabled:opacity-25 " disabled>detail</x-button>
+                            @endif
                         </div>
                     </div>
 
