@@ -73,12 +73,13 @@
                             <p class="mt-1 mb-1 ml-2 text-gray-500 dark:text-gray-400 leading-relaxed text-xl">date :</p>
                         </div>
                         <select name="date" id="date" class="dark:bg-gray-700 ml-4 rounded-md text-white">
+
                             <option value="">Select a date</option>
-                            <option value="1" @if(auth()->user()->day1 == '1') selected @endif>30 october 2023</option>
-                            <option value="2" @if(auth()->user()->day1 == '2') selected @endif>31 october 2023</option>
-                            <option value="3" @if(auth()->user()->day1 == '3') selected @endif>1 november 2023</option>
-                            <option value="4" @if(auth()->user()->day1 == '4') selected @endif>2 november 2023</option>
-                            <option value="5" @if(auth()->user()->day1 == '5') selected @endif>3 november 2023</option>
+                            <option value="1" @if(auth()->user()->day1 == '1') selected @endif @if(50-App\Models\User::where('day1', 1)->count() == 0) disabled @endif>30 oct 2023 ({{50-App\Models\User::where('day1', 1)->count()}} left)</option>
+                            <option value="2" @if(auth()->user()->day1 == '2') selected @endif @if(50-App\Models\User::where('day1', 2)->count() == 0) disabled @endif>31 oct 2023 ({{50-App\Models\User::where('day1', 2)->count()}} left)</option>
+                            <option value="3" @if(auth()->user()->day1 == '3') selected @endif @if(50-App\Models\User::where('day1', 3)->count() == 0) disabled @endif>1 nov 2023 ({{50-App\Models\User::where('day1', 3)->count()}} left)</option>
+                            <option value="4" @if(auth()->user()->day1 == '4') selected @endif @if(50-App\Models\User::where('day1', 4)->count() == 0) disabled @endif>2 nov 2023 ({{50-App\Models\User::where('day1', 4)->count()}} left)</option>
+                            <option value="5" @if(auth()->user()->day1 == '5') selected @endif @if(50-App\Models\User::where('day1', 5)->count() == 0) disabled @endif>3 nov 2023 ({{50-App\Models\User::where('day1', 5)->count()}} left)</option>
                         </select>
                     </div>
                     <div class="flex items-center ml-4 ">
