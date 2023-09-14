@@ -5,7 +5,17 @@
         </h2>
     </x-slot>
     <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-        <form action="/savemusic" method="POST">
+        @if(session('success'))
+            <div id="success-message" class="flex justify-center bg-lime-900 text-white leading-relaxed text-xl p-4 my-3 rounded-md">
+                {{ session('success') }}
+            </div>
+        @endif
+            @if(session('caution'))
+                <div id="caution-message" class="flex justify-center bg-red-900 text-white leading-relaxed text-xl p-4 my-3 rounded-md">
+                    {{ session('caution') }}
+                </div>
+            @endif
+        <form action="/1/store" id="myForm" method="POST">
             @csrf
             <div class="dark:bg-gray-800 bg-opacity-25 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8 rounded-md">
                 <div class="dark:bg-gray-800 bg-opacity-25 p-6 lg:p-8 rounded-md">
@@ -48,7 +58,7 @@
                             contest information
                         </h2>
                     </div>
-                    <div class="flex items-center">
+                    <div class="flex items-center ml-4 mt-3">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 20 20" class="ml-1 w-8 h-8 fill-indigo-500 dark:fill-indigo-200">
                             <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
                             <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -56,25 +66,29 @@
                         <p class="mt-1 mb-1 ml-2 text-gray-500 dark:text-gray-400 leading-relaxed text-xl">contest venue : Chalerm Prommas</p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                        <div class="flex items-center">
+                        <div class="flex items-center ml-4 ">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 20 20" class="ml-1 w-8 h-8 fill-indigo-500 dark:fill-indigo-200">
                                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                             </svg>
                             <p class="mt-1 mb-1 ml-2 text-gray-500 dark:text-gray-400 leading-relaxed text-xl">date :</p>
                         </div>
                         <select name="date" id="date" class="dark:bg-gray-700 ml-4 rounded-md text-white">
+                            <option value="">Select a date</option>
                             <option value="1" @if(auth()->user()->day1 == '1') selected @endif>30 october 2023</option>
-                            <option value="2" @if(auth()->user()->day1 == '2') selected @endif>1 november 2023</option>
+                            <option value="2" @if(auth()->user()->day1 == '2') selected @endif>31 october 2023</option>
+                            <option value="3" @if(auth()->user()->day1 == '3') selected @endif>1 november 2023</option>
+                            <option value="4" @if(auth()->user()->day1 == '4') selected @endif>2 november 2023</option>
+                            <option value="5" @if(auth()->user()->day1 == '5') selected @endif>3 november 2023</option>
                         </select>
                     </div>
-                    <div class="flex items-center">
+                    <div class="flex items-center ml-4 ">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 20 20" class="ml-1 w-8 h-8 fill-indigo-500 dark:fill-indigo-200">
                             <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z"/>
                             <path d="M1.713 11.865v-.474H2c.217 0 .363-.137.363-.317 0-.185-.158-.31-.361-.31-.223 0-.367.152-.373.31h-.59c.016-.467.373-.787.986-.787.588-.002.954.291.957.703a.595.595 0 0 1-.492.594v.033a.615.615 0 0 1 .569.631c.003.533-.502.8-1.051.8-.656 0-1-.37-1.008-.794h.582c.008.178.186.306.422.309.254 0 .424-.145.422-.35-.002-.195-.155-.348-.414-.348h-.3zm-.004-4.699h-.604v-.035c0-.408.295-.844.958-.844.583 0 .96.326.96.756 0 .389-.257.617-.476.848l-.537.572v.03h1.054V9H1.143v-.395l.957-.99c.138-.142.293-.304.293-.508 0-.18-.147-.32-.342-.32a.33.33 0 0 0-.342.338v.041zM2.564 5h-.635V2.924h-.031l-.598.42v-.567l.629-.443h.635V5z"/>
                         </svg>
                         <p class="mt-1 mb-1 ml-2 text-gray-500 dark:text-gray-400 leading-relaxed text-xl">queue : TBD</p>
                     </div>
-                    <div class="flex items-center">
+                    <div class="flex items-center ml-4 ">
                         <p class="mb-1 ml-4 text-gray-500 dark:text-gray-400 leading-relaxed">*please check in at venue to get queue</p><br>
                     </div>
                 </div>
@@ -143,4 +157,52 @@
         </form>
     </div>
 </x-app-layout>
+<script>
+    // Wait for the DOM to load
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get the success message element
+        var successMessage = document.getElementById("success-message");
+
+        // Check if the success message element exists
+        if (successMessage) {
+            // Delay the hiding of the message by 3 seconds (3000 milliseconds)
+            setTimeout(function () {
+                // Hide the success message by setting its display property to "none"
+                successMessage.style.display = "none";
+            }, 4000);
+        }
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get the success message element
+        var cautionMessage = document.getElementById("caution-message");
+
+        // Check if the success message element exists
+        if (cautionMessage) {
+            // Delay the hiding of the message by 3 seconds (3000 milliseconds)
+            setTimeout(function () {
+                // Hide the caution message by setting its display property to "none"
+                cautionMessage.style.display = "none";
+            }, 4000);
+        }
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get the form element by its ID
+        var form = document.getElementById("myForm");
+
+        form.addEventListener("submit", function (event) {
+            // Get the selected value from the date select element
+            var selectedDate = document.getElementById("date").value;
+
+            // Check if the selected value is empty (i.e., "Select a date" option)
+            if (selectedDate === "") {
+                // Prevent the form from submitting
+                event.preventDefault();
+
+                // Optionally, display an error message or take some other action
+                alert("Please select a date before submitting the form.");
+            }
+        });
+    });
+
+</script>
 

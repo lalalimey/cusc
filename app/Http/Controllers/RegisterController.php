@@ -72,4 +72,23 @@ class RegisterController extends Controller
         $user->save();
         return redirect('/check');
     }
+    public function store1(Request $request){
+        if ($request->date == 1 &&  User::where('day1', 1)->count() == 50)
+            return redirect('/1/detail')->with('caution', 'the date that you select is already full');
+        if ($request->date == 2 &&  User::where('day1', 2)->count() == 50)
+            return redirect('/1/detail')->with('caution', 'the date that you select is already full');
+        if ($request->date == 3 &&  User::where('day1', 3)->count() == 50)
+            return redirect('/1/detail')->with('caution', 'the date that you select is already full');
+        if ($request->date == 4 &&  User::where('day1', 4)->count() == 50)
+            return redirect('/1/detail')->with('caution', 'the date that you select is already full');
+        if ($request->date == 5 &&  User::where('day1', 5)->count() == 50)
+            return redirect('/1/detail')->with('caution', 'the date that you select is already full');
+        $user = Auth::user();
+        $user->day1 = $request->date;
+        $user->song1 = $request->song;
+        $user->artist1 = $request->artist;
+        $user->link1 = $request->link;
+        $user->save();
+        return redirect('/1/detail')->with('success', 'saved');
+    }
 }

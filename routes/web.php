@@ -34,7 +34,7 @@ Route::middleware([
         return view('apply');
     })->name('apply');
     Route::post('/apply/form', [RegisterController::class, 'store'])->name('form.submit');
-    Route::post('/1/store', [RegisterController::class, '1store']);
+    Route::post('/1/store', [RegisterController::class, 'store1']);
     Route::get('/1/detail', function (){
         return view('1detail');
     });
