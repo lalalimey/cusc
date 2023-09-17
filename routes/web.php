@@ -17,6 +17,9 @@ use App\Http\Controllers\Auth\LoginController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/term', function () {
+    return view('terms');
+});
 Route::get('/login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
 Route::get('/callback', [LoginController::class, 'handleGoogleCallback']);
 Route::get('/about', function () {

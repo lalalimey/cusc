@@ -40,7 +40,7 @@
                     <x-input id="phone" type="text" class="mt-1 block w-full" name="telephone" required autocomplete="phone" />
                     <x-input-error for="phone" class="mt-2" />
                 </div>
-                <h2 class="text-2xl font-medium text-gray-900 dark:text-white col-span-2 sm:col-span-2 lg:col-span-2">registration fee</h2>
+                <h2 class="text-2xl font-medium text-gray-900 dark:text-white col-span-2 sm:col-span-2 lg:col-span-2">registration fee (300 baht)</h2>
                 <div class="col-span-1 sm:col-span-2 lg:col-span-1">
                     <div class="flex justify-center">
                         <img src="{{ asset('images/qr.jpg') }}" alt="QR Image" style="width: 222px; height: auto;">
@@ -62,7 +62,10 @@
                 <div class="col-span-2 sm:col-span-2 lg:col-span-2">
                     <div class="flex items-center">
                         <x-checkbox id="agree" class="mr-2" name="agree" required />
-                        <x-label for="agree" value="{{ __('Agree to terms') }}" />
+                        <x-label for="agree">
+                            Agree to <a href="/term" ><span class="underline">terms and conditions</span></a>
+                        </x-label>
+
                     </div>
                     <div class="flex justify-end">
                         <x-button type="submit" name="action">
