@@ -13,7 +13,8 @@
 
                         <div class="my-posts">
                             @foreach($users as $user)
-                                <form action="/apply/detail" method="POST">
+                                @if($user->register > 0)
+                                    <form action="/apply/detail" method="POST">
                                     @csrf
                                     <div class="rounded-md dark:bg-gray-600 bg-opacity-25 grid grid-cols-1 md:grid-cols-1 gap-6 lg:gap-8 p-4 lg:p-6 mb-4">
                                         <div>
@@ -31,6 +32,7 @@
                                         </div>
                                     </div>
                                 </form>
+                                @endif
                             @endforeach
                         </div>
                     </form>

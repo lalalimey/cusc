@@ -13,6 +13,7 @@
                             {{$user->firstname}}'s slip
                         </h1>
                         @if ($path && Storage::exists($path))
+{{--                            @php($cleanPath = Str::replace('public/images', 'storage/app/public/images', $path))--}}
                             <img src="{{ Storage::url($path) }}" class="w-3/4 h-auto mb-4" alt="User Slip">
                         @else
                             <p>No slip image available for this user. This may mean there is a mistake made by the developer. Please contact Line ID: verabhat immediately.</p>
