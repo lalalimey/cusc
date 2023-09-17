@@ -149,7 +149,7 @@
                     </div>
                 </div>
                 <div class="dark:bg-gray-800 bg-opacity-25 p-6 lg:p-8 rounded-md">
-                    <p class="dark:text-gray-400 leading-relaxed text-xl">you can still change music,artist and contest date until <span class="font-bold text-white">xx october 2023</span>. Do not inform this form on time mean you waiver.</p>
+                    <p class="dark:text-gray-400 leading-relaxed text-xl">you can still change music,artist and contest date until <span class="font-bold text-white">17 october 2023</span>. Do not inform this form on time mean you waiver.</p>
                     <div class="flex justify-end mt-4">
                         <x-button type="submit" name="action">submit</x-button>
                     </div>
