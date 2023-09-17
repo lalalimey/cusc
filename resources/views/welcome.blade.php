@@ -43,7 +43,7 @@
                 </a>
             </div>
             <div class="lg:mt-0 sm:mt-20">
-                <a href="">
+                <a href="/about">
                     <button class="text-white custom-text-sm hover:text-yellow-500 hover-icon ">about us</button>
                 </a>
 {{--                <h1 class="text-white custom-text-sm glitch-text" >test</h1>--}}
