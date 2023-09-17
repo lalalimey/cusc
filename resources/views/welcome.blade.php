@@ -27,7 +27,7 @@
         }
     </style>
 </head>
-<body >
+<body>
     <div class="bg-cover bg-center h-screen" style="background-image: url('/images/Bg_Web_With_Spotlight.png')">
         <div class="flex flex-col items-center ">
             <!-- Logo container -->
@@ -44,8 +44,9 @@
             </div>
             <div class="lg:mt-0 sm:mt-20">
                 <a href="">
-                    <button class="text-white custom-text-sm hover:text-yellow-500 hover-icon">about us</button>
+                    <button class="text-white custom-text-sm hover:text-yellow-500 hover-icon ">about us</button>
                 </a>
+{{--                <h1 class="text-white custom-text-sm glitch-text" >test</h1>--}}
             </div>
         </div>
     </div>

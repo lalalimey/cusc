@@ -19,6 +19,9 @@ Route::get('/', function () {
 });
 Route::get('/login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
 Route::get('/callback', [LoginController::class, 'handleGoogleCallback']);
+Route::get('/about', function () {
+    return view('about');
+});
 
 Route::middleware([
     'auth:sanctum',

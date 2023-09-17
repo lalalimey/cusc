@@ -5,3 +5,33 @@
 [x-cloak] {
     display: none;
 }
+
+.glitch-text {
+    font-size: 48px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    animation: glitch 1s infinite;
+    color: transparent; /* Set the text color to transparent */
+    background-image: linear-gradient(45deg, #f06, #0f6, #06f, #60f, #f60); /* Add a colorful gradient background */
+    background-clip: text; /* Clip the background to the text */
+    -webkit-background-clip: text; /* For Safari */
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    25% {
+        transform: translate(-2px, -2px);
+    }
+    50% {
+        transform: translate(2px, 2px);
+    }
+    75% {
+        transform: translate(-2px, -2px);
+    }
+    100% {
+        transform: translate(2px, 2px);
+    }
+}

@@ -14,8 +14,8 @@
                         Welcome to CU Singing Contest
                     </h1>
                     <p class="mt-6 mb-4 text-gray-500 dark:text-gray-400 leading-relaxed">
-                        If you don't register to this contest yet, please register using button below. There are 500 baht registration fee.
-                        The register form will be open from 15 july to 30 august
+                        If you don't register to this contest yet, please register using button below. There are 300 baht registration fee.
+                        The register form will be open from 18 september to 30 september
                     </p>
                     @if(auth()->user()->register >= 1)
                         <x-button class="disabled:opacity-25 " disabled>registered</x-button>
@@ -54,7 +54,7 @@
                                 <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
                             </svg>
                             <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed ml-2">
-                                17:00 - 20:00
+                                TBD
                             </p>
                         </div>
                         <div class="mt-3 ml-10 flex items-center">
@@ -93,7 +93,7 @@
                                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                             </svg>
                             <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed ml-2">
-                                8 november 2023
+                                TBD
                             </p>
                         </div>
                         <div class="mt-3 ml-10 flex items-center">
@@ -102,7 +102,7 @@
                                 <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
                             </svg>
                             <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed ml-2">
-                                17:00 - 20:00
+                                TBD
                             </p>
                         </div>
                         <div class="mt-3 ml-10 flex items-center">
@@ -115,7 +115,7 @@
                             </p>
                         </div>
                         <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                            please fill out the form to inform music name and soundtrack using button below after registered and approved by staff. <span class="font-bold text-white">this form will be open until 31 december 2023.</span> Do not inform this form on time mean you waiver.
+                            this form will open after first round contest is finished and the result is announced
                         </p>
                         <div class="flex justify-end mt-2">
                             @php($serviceStatus1 = App\Models\service_status::find(2))
@@ -142,7 +142,7 @@
                                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                             </svg>
                             <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed ml-2">
-                                26 january 2024
+                                TBD
                             </p>
                         </div>
                         <div class="mt-3 ml-10 flex items-center">
@@ -151,7 +151,7 @@
                                 <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
                             </svg>
                             <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed ml-2">
-                                17:00 - 20:00
+                                TBD
                             </p>
                         </div>
                         <div class="mt-3 ml-10 flex items-center">
@@ -164,7 +164,7 @@
                             </p>
                         </div>
                         <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                            please fill out the form to inform music name and soundtrack using button below after registered and approved by staff. <span class="font-bold text-white">this form will be open until 31 december 2023.</span> Do not inform this form on time mean you waiver.
+                            this form will open after first round contest is finished and the result is announced.
                         </p>
                         <div class="flex justify-end mt-2">
                             @php($serviceStatus2 = App\Models\service_status::find(3))
