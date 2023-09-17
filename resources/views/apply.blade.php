@@ -10,12 +10,12 @@
             @csrf
             <div class="bg-gray-200 dark:bg-gray-800 bg-opacity-25 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8 rounded-md">
                 <h2 class="text-2xl font-medium text-gray-900 dark:text-white col-span-2 sm:col-span-2 lg:col-span-2">personal information</h2>
-                <div class="col-span-1 sm:col-span-2 lg:col-span-1">
+                <div class="col-span-2 sm:col-span-2 lg:col-span-1">
                     <x-label for="firstname" value="{{ __('Firstname') }}" />
                     <x-input id="firstname" type="text" class="mt-1 block w-full" name="firstname" required autocomplete="Firstname" />
                     <x-input-error for="firstname" class="mt-2" />
                 </div>
-                <div class="col-span-1 sm:col-span-2 lg:col-span-1">
+                <div class="col-span-2 sm:col-span-2 lg:col-span-1">
                     <x-label for="lastname" value="{{ __('Lastname') }}" />
                     <x-input id="lastname" type="text" class="mt-1 block w-full" name="lastname" required autocomplete="Lastname" />
                     <x-input-error for="lastname" class="mt-2" />
@@ -25,12 +25,12 @@
                     <x-input id="nickname" type="text" class="mt-1 block w-full" name="nickname" required autocomplete="Nickname" />
                     <x-input-error for="Nickname" class="mt-2" />
                 </div>
-                <div class="col-span-1 sm:col-span-2 lg:col-span-1">
+                <div class="col-span-2 sm:col-span-2 lg:col-span-1">
                     <x-label for="facebook" value="{{ __('facebook (please fill - if do not have)') }}" />
                     <x-input id="facebook" type="text" class="mt-1 block w-full" name="facebook" required autocomplete="Facebook" />
                     <x-input-error for="facebook" class="mt-2" />
                 </div>
-                <div class="col-span-1 sm:col-span-2 lg:col-span-1">
+                <div class="col-span-2 sm:col-span-2 lg:col-span-1">
                     <x-label for="line" value="{{ __('Line ID (please fill - if do not have)') }}" />
                     <x-input id="line" type="text" class="mt-1 block w-full" name="line" required autocomplete="Line" />
                     <x-input-error for="line" class="mt-2" />
@@ -46,7 +46,7 @@
                         <img src="{{ asset('images/qr.jpg') }}" alt="QR Image" style="width: 222px; height: auto;">
                     </div>
                 </div>
-                <div class="col-span-1 sm:col-span-2 lg:col-span-1">
+                <div class="col-span-2 sm:col-span-2 lg:col-span-1">
                     <x-label for="slip" value="{{ __('money transfer slip') }}" />
                     <x-input id="slip" type="file" name="slip" class="mt-1 block w-full" required />
                     <x-input-error for="slip" class="mt-2" />
