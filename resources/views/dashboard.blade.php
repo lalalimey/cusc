@@ -23,6 +23,8 @@
                         <x-button class="disabled:bg-green-500 " disabled>registration successfully</x-button>
                     @elseif($serviceStatus->status == 'off')
                         <x-button class="disabled:opacity-25 " disabled>registration closed</x-button>
+                    @elseif(300-App\Models\User::where('register', 1)->count() == 0)
+                        <x-button class="disabled:opacity-25 " disabled>fully register</x-button>
                     @elseif($serviceStatus->status == 'on')
                         <a href="/apply">
                             <x-button>register</x-button>
