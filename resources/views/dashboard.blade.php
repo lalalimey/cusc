@@ -67,7 +67,7 @@
                             </p>
                         </div>
                         <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                            please fill out the form to inform music name and soundtrack using button below after registered and approved by staff. <span class="font-bold text-white">this form will be open until 17 october 2023.</span> Do not inform this form on time mean you waiver.
+                            please fill out the form to inform music name and soundtrack using button below after registered and approved by staff. <span class="font-bold">this form will be open until 17 october 2023.</span> Do not inform this form on time mean you waiver.
                         </p>
                         <div class="flex justify-end mt-2">
                             @if(auth()->user()->approve != null)
