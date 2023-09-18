@@ -17,8 +17,10 @@
                         If you don't register to this contest yet, please register using button below. There are 300 baht registration fee.
                         The register form will be open from 18 september to 30 september
                     </p>
-                    @if(auth()->user()->register >= 1)
-                        <x-button class="disabled:opacity-25 " disabled>registered</x-button>
+                    @if(auth()->user()->register >= 1 && auth()->user()->approve == null)
+                        <x-button class="disabled:bg-yellow-500 " disabled>registered (pending)</x-button>
+                    @elseif(auth()->user()->register >= 1 && auth()->user()->approve != null)
+                        <x-button class="disabled:bg-green-500 " disabled>registration successfully</x-button>
                     @elseif($serviceStatus->status == 'off')
                         <x-button class="disabled:opacity-25 " disabled>registration closed</x-button>
                     @elseif($serviceStatus->status == 'on')
@@ -28,6 +30,7 @@
                     @else
                         <x-button class="disabled:opacity-25 " disabled>registration closed</x-button>
                     @endif
+
                 </div>
 
                 <div class="bg-gray-200 dark:bg-gray-800 bg-opacity-25 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8">
@@ -36,7 +39,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -1 20 20" class="ml-1 w-6 h-6 fill-indigo-500 dark:fill-indigo-200">
                                 <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383h1.312Z"/>
                             </svg>
-                            <h2 class="ml-3 text-xl font-semibold text-gray-900 dark:text-white">
+                            <h2 class="ml-3 text-xl font-bold text-gray-900 dark:text-white">
                                 <p>first round contest</p>
                             </h2>
                         </div>
@@ -71,8 +74,10 @@
                         </p>
                         <div class="flex justify-end mt-2">
                             @if(auth()->user()->approve != null)
-                                <a href="/1/detail">
+                                <a href="/1/detail" class="relative inline-block">
                                     <x-button>detail</x-button>
+                                    <span class="animate-ping absolute top-0 right-0 block h-2 w-2 rounded-full ring-2 ring-green-400 bg-green-600"></span>
+                                    <span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-green-600"></span>
                                 </a>
                             @else
                                 <x-button class="disabled:opacity-25 " disabled>detail</x-button>
