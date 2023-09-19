@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,4 +55,6 @@ Route::middleware('role:staff')->group(function () {
     Route::get('/check',[RegisterController::class, 'retrieve']);
     Route::post('/apply/detail', [RegisterController::class, 'detail'])->name('form.detail');
     Route::post('/apply/confirm', [RegisterController::class, 'approve']);
+    Route::get('/export-users', [UserController::class, 'exportUsers']);
+
 });

@@ -14,6 +14,9 @@
                 <a href="/check">
                     <x-button>check receipt</x-button>
                 </a>
+                <a href="/export-users">
+                    <x-button>download excel</x-button>
+                </a>
             </div>
         </div>
     </div>
