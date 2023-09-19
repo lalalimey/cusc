@@ -45,8 +45,8 @@ class RegisterController extends Controller
     }
     public function retrieve(){
         $query = User::query();
-        $query->where('register', 1); // Add filter for the 'register' column
-        $users = $query->paginate(20);
+        $query->where('register', 1)->orderBy('id', 'desc'); // Add filter for the 'register' column
+        $users = $query->paginate(10);
         return view('staff/registration-check', compact('users'));
     }
     public function detail(Request $request)
