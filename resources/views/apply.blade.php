@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="col-span-2 sm:col-span-2 lg:col-span-1">
-                    <x-label for="slip" value="{{ __('money transfer slip') }}" />
+                    <x-label for="slip" value="{{ __('money transfer slip (size must be less than 1 mb)') }}" />
                     <x-input id="slip" type="file" name="slip" class="mt-1 block w-full" required />
                     <x-input-error for="slip" class="mt-2" />
                     <br>
@@ -77,4 +77,16 @@
         </form>
 
     </div>
+    <script>
+        document.getElementById("slip").addEventListener("change", function() {
+            const fileInput = this;
+            const maxSize = 1 * 1024 * 1024; // 1MB in bytes
+            const selectedFile = fileInput.files[0];
+
+            if (selectedFile && selectedFile.size > maxSize) {
+                alert("File size exceeds the allowed limit (1MB). Please choose a smaller file.");
+                fileInput.value = ""; // Clear the file input
+            }
+        });
+    </script>
 </x-app-layout>
