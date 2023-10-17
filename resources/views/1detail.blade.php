@@ -82,15 +82,18 @@
                                 <p class="mt-1 mb-1 ml-2 text-gray-500 dark:text-gray-400 leading-relaxed text-xl">date : 3 nov</p>
                             @endif
                         </div>
-                        <select name="date" id="date" class="dark:bg-gray-700 ml-4 rounded-md text-white">
+                        @php($serviceStatus = App\Models\service_status::find(4))
+                        @if($serviceStatus->status == 'on')
+                            <select name="date" id="date" class="dark:bg-gray-700 ml-4 rounded-md text-white">
 
-                            <option value="">Select a date</option>
-                            <option value="1" @if(auth()->user()->day1 == '1') selected @endif @if(50-App\Models\User::where('day1', 1)->count() == 0) disabled @endif>30 oct 2023 ({{50-App\Models\User::where('day1', 1)->count()}} left)</option>
-                            <option value="2" @if(auth()->user()->day1 == '2') selected @endif @if(50-App\Models\User::where('day1', 2)->count() == 0) disabled @endif>31 oct 2023 ({{50-App\Models\User::where('day1', 2)->count()}} left)</option>
-                            <option value="3" @if(auth()->user()->day1 == '3') selected @endif @if(50-App\Models\User::where('day1', 3)->count() == 0) disabled @endif>1 nov 2023 ({{50-App\Models\User::where('day1', 3)->count()}} left)</option>
-                            <option value="4" @if(auth()->user()->day1 == '4') selected @endif @if(50-App\Models\User::where('day1', 4)->count() == 0) disabled @endif>2 nov 2023 ({{50-App\Models\User::where('day1', 4)->count()}} left)</option>
-                            <option value="5" @if(auth()->user()->day1 == '5') selected @endif @if(50-App\Models\User::where('day1', 5)->count() == 0) disabled @endif>3 nov 2023 ({{50-App\Models\User::where('day1', 5)->count()}} left)</option>
-                        </select>
+                                <option value="">Select a date</option>
+                                <option value="1" @if(auth()->user()->day1 == '1') selected @endif @if(50-App\Models\User::where('day1', 1)->count() == 0) disabled @endif>30 oct 2023 ({{50-App\Models\User::where('day1', 1)->count()}} left)</option>
+                                <option value="2" @if(auth()->user()->day1 == '2') selected @endif @if(50-App\Models\User::where('day1', 2)->count() == 0) disabled @endif>31 oct 2023 ({{50-App\Models\User::where('day1', 2)->count()}} left)</option>
+                                <option value="3" @if(auth()->user()->day1 == '3') selected @endif @if(50-App\Models\User::where('day1', 3)->count() == 0) disabled @endif>1 nov 2023 ({{50-App\Models\User::where('day1', 3)->count()}} left)</option>
+                                <option value="4" @if(auth()->user()->day1 == '4') selected @endif @if(50-App\Models\User::where('day1', 4)->count() == 0) disabled @endif>2 nov 2023 ({{50-App\Models\User::where('day1', 4)->count()}} left)</option>
+                                <option value="5" @if(auth()->user()->day1 == '5') selected @endif @if(50-App\Models\User::where('day1', 5)->count() == 0) disabled @endif>3 nov 2023 ({{50-App\Models\User::where('day1', 5)->count()}} left)</option>
+                            </select>
+                        @endif
                     </div>
                     <div class="flex items-center ml-4 ">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 20 20" class="ml-1 w-8 h-8 fill-indigo-500 dark:fill-indigo-200">
@@ -123,9 +126,15 @@
                             </svg>
                             <p class="mt-1 mb-1 ml-2 text-gray-500 dark:text-gray-400 leading-relaxed text-xl">music :</p>
                         </div>
-                        <div class="mt-4">
-                            <x-input id="song" type="text" name="song" class=" w-full" value="{{auth()->user()->song1}}" required />
-                        </div>
+                        @if($serviceStatus->status == 'on')
+                            <div class="mt-4">
+                                <x-input id="song" type="text" name="song" class=" w-full" value="{{auth()->user()->song1}}" required />
+                            </div>
+                        @else
+                            <div class="mt-4">
+                                <p class="mt-1 mb-1 ml-2 text-gray-500 dark:text-gray-400 leading-relaxed text-xl">{{auth()->user()->song1}}</p>
+                            </div>
+                        @endif
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="flex items-center ml-4 mt-4">
@@ -134,9 +143,16 @@
                             </svg>
                             <p class="mt-1 mb-1 ml-2 text-gray-500 dark:text-gray-400 leading-relaxed text-xl">artist :</p>
                         </div>
-                        <div class="mt-4">
-                            <x-input id="artist" type="text" name="artist" class="w-full" value="{{auth()->user()->artist1}}" required />
-                        </div>
+                        @if($serviceStatus->status == 'on')
+                            <div class="mt-4">
+                                <x-input id="artist" type="text" name="artist" class="w-full" value="{{auth()->user()->artist1}}" required />
+                            </div>
+                        @else
+                            <div class="mt-4">
+                                <p class="mt-1 mb-1 ml-2 text-gray-500 dark:text-gray-400 leading-relaxed text-xl">{{auth()->user()->artist1}}</p>
+                            </div>
+                        @endif
+
                     </div>
                     <div class="flex items-center ml-4 mt-4">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 20 20" class="ml-1 w-8 h-8 fill-indigo-500 dark:fill-indigo-200">
@@ -155,14 +171,19 @@
                         @else
                             <x-button class="ml-4 disabled:opacity-25 " disabled>link</x-button>
                         @endif
-                        <x-input id="link" type="text" name="link" class="ml-4 w-3/4" value="{{auth()->user()->link1}}" required />
+                        @if($serviceStatus->status == 'on')
+                            <x-input id="link" type="text" name="link" class="ml-4 w-3/4" value="{{auth()->user()->link1}}" required />
+                        @endif
                     </div>
                 </div>
                 <div class="dark:bg-gray-800 bg-opacity-25 p-6 lg:p-8 rounded-md">
                     <p class="dark:text-gray-400 leading-relaxed text-xl">you can still change music,artist and contest date until <span class="font-bold text-white">17 october 2023</span>. Do not inform this form on time mean you waiver.</p>
-                    <div class="flex justify-end mt-4">
-                        <x-button type="submit" name="action">submit</x-button>
-                    </div>
+                    @if($serviceStatus->status == 'on')
+                        <div class="flex justify-end mt-4">
+                            <x-button type="submit" name="action">submit</x-button>
+                        </div>
+                    @endif
+
                 </div>
             </div>
         </form>
