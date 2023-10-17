@@ -100,7 +100,7 @@
                                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                             </svg>
                             <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed ml-2">
-                                TBD
+                                8 november 2023
                             </p>
                         </div>
                         <div class="mt-3 ml-10 flex items-center">
@@ -109,7 +109,7 @@
                                 <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
                             </svg>
                             <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed ml-2">
-                                TBD
+                                16:30 - 21:30
                             </p>
                         </div>
                         <div class="mt-3 ml-10 flex items-center">

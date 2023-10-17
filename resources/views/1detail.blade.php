@@ -70,7 +70,17 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 20 20" class="ml-1 w-8 h-8 fill-indigo-500 dark:fill-indigo-200">
                                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                             </svg>
-                            <p class="mt-1 mb-1 ml-2 text-gray-500 dark:text-gray-400 leading-relaxed text-xl">date :</p>
+                            @if(auth()->user()->day1=='1')
+                                <p class="mt-1 mb-1 ml-2 text-gray-500 dark:text-gray-400 leading-relaxed text-xl">date : 30 oct</p>
+                            @elseif(auth()->user()->day1=='2')
+                                <p class="mt-1 mb-1 ml-2 text-gray-500 dark:text-gray-400 leading-relaxed text-xl">date : 31 oct</p>
+                            @elseif(auth()->user()->day1=='3')
+                                <p class="mt-1 mb-1 ml-2 text-gray-500 dark:text-gray-400 leading-relaxed text-xl">date : 1 nov</p>
+                            @elseif(auth()->user()->day1=='4')
+                                <p class="mt-1 mb-1 ml-2 text-gray-500 dark:text-gray-400 leading-relaxed text-xl">date : 2 nov</p>
+                            @else
+                                <p class="mt-1 mb-1 ml-2 text-gray-500 dark:text-gray-400 leading-relaxed text-xl">date : 3 nov</p>
+                            @endif
                         </div>
                         <select name="date" id="date" class="dark:bg-gray-700 ml-4 rounded-md text-white">
 

@@ -92,4 +92,30 @@ class RegisterController extends Controller
         $user->save();
         return redirect('/1/detail')->with('success', 'saved');
     }
+
+    public function checkinconfirm(Request $request){
+        $user = User::where('email', 'like', $request->id . '@student.chula.ac.th')->first();
+        if ($user->day1 == $request->date){
+            $user->checkin1 = now();
+            $user->save();
+            return redirect('/checkin')->with('success', $user->email);
+        }
+        else {
+            return redirect('/checkin')->with('caution', 'this user do not chose this day');
+        }
+    }
+    public function userorderbyque(Request $request)
+    {
+        // Use the User model to query the database
+        $users = User::where('day1', $request->date)
+            ->where('sing1', 'N')
+            ->orderBy('checkin1')
+            ->get();
+
+        // $users will now contain the results sorted by checkin1 column
+
+        // Your other controller logic here
+
+        return view('your_view', ['users' => $users]);
+    }
 }

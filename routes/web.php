@@ -52,9 +52,13 @@ Route::middleware('role:staff')->group(function () {
     Route::get('/admin', function () {
         return view('staff/admin');
     })->name('admin');
+    Route::get('/checkin', function () {
+        return view('staff/checkin');
+    })->name('checkin');
     Route::get('/check',[RegisterController::class, 'retrieve']);
     Route::post('/apply/detail', [RegisterController::class, 'detail'])->name('form.detail');
     Route::post('/apply/confirm', [RegisterController::class, 'approve']);
     Route::get('/export-users', [UserController::class, 'exportUsers']);
-
+    Route::post('/checkin/confirm' , [RegisterController::class, 'checkinconfirm']);
+    Route::post('/queue' , [RegisterController::class, 'userorderbyque']);
 });

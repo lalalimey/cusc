@@ -47,6 +47,8 @@ class User extends Authenticatable
         '1_day',
         '1_song',
         '1_link',
+        'checkin1',
+        'sing1',
     ];
 
     /**
