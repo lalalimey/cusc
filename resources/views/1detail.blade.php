@@ -166,7 +166,7 @@
                     <div class="flex items-center ml-4 mt-4">
                         @if(auth()->user()->link1 != null)
                             <a href="{{auth()->user()->link1}}">
-                                <x-button class="ml-4 disabled:opacity-25 ">link</x-button>
+                                <p class="mt-1 mb-1 ml-2 text-gray-500 dark:text-gray-400 leading-relaxed text-xl underline">soundtrack link</p>
                             </a>
                         @else
                             <x-button class="ml-4 disabled:opacity-25 " disabled>link</x-button>
